@@ -1,0 +1,255 @@
+<html lang="en"><head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 140%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  <style type="text/css">#_copy{align-items:center;background:#4494d5;border-radius:3px;color:#fff;cursor:pointer;display:flex;font-size:13px;height:30px;justify-content:center;position:absolute;width:60px;z-index:1000}#select-tooltip,#sfModal,.modal-backdrop,div[id^=reader-helper]{display:none!important}.modal-open{overflow:auto!important}._sf_adjust_body{padding-right:0!important}.enable_copy_btns_div{position:fixed;width:154px;left:10px;top:45%;background:#e7f1ff;border:2px solid #4595d5;font-weight:600;border-radius:2px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;z-index:5000}.enable_copy_btns_logo{width:100%;background:#4595d5;text-align:center;font-size:12px;color:#e7f1ff;line-height:30px;height:30px}.enable_copy_btns_btn{display:block;width:128px;height:28px;background:#7f5711;border-radius:4px;color:#fff;font-size:12px;border:0;outline:0;margin:8px auto;font-weight:700;cursor:pointer;opacity:.9}.enable_copy_btns_btn:hover{opacity:.8}.enable_copy_btns_btn:active{opacity:1}</style></head>
+
+  <body inmaintabuse="1">
+    <header>
+      <h1>
+        <small>Project 2</small>
+        Complaint Outcomes
+      </h1>
+
+      <p><strong>Turki Alrasheed</strong> - <em>talrasheed@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2> Gender Disparities in Complaint Substantiation Rates are Large and Increase with Complainant Age </h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="with_prop.png" alt="" style="width: 100%;">
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+<ul>
+  <li>
+    <strong>1- Redundant Encoding</strong><br>
+    <em>Score: 2</em><br>
+    I used vertical line thickness as another encoding for the gap in addition to length. This was to emphasize the difference and make it easier for the reader to see the difference in % Action Taken on Complaint by gender.
+  </li>
+
+  <li>
+    <strong>2- Age Binning</strong><br>
+    <em>Score: -1</em><br>
+    I tried different age binnings to find the one with the most dramatic difference between males and females. The age binnings worked well with this visualization, but also worked well with my next visualization to get smaller differences.
+  </li>
+
+  <li>
+    <strong>3- Filtering Complaints</strong><br>
+    <em>Score: -2</em><br>
+    I filtered the complaints by its FADO type to Force complaints. This ensured that the data showed a big difference between males and females in terms of % Action Taken (Substantiation).
+  </li>
+
+  <li>
+    <strong>4- Annotation</strong><br>
+    <em>Score: 2</em><br>
+    I emphasized to the reader the important part of the plot, that is, with age, the gap more than triples with older females having the lowest substantiation rates (% Action Taken). I needed to add something like "triples" to make the reader feel its significance and because beside each vertical line is the difference in % Action Taken between males and females, so I needed something new.
+  </li>
+
+  <li>
+    <strong>5- Title</strong><br>
+    <em>Score: 0</em><br>
+    The title needed to be engaging, pull the reader in, and add an emotional factor, so I said that females were "less likely to be taken seriously." I also wanted to emphasize that the gap increases dramatically with age, so I added "especially Older Females."
+  </li>
+</ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="against_prop.png" alt="" style="width: 100%;">
+          
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+<ul>
+  <li>
+    <strong>1- Redundant Encoding</strong><br>
+    <em>Score: 2</em><br>
+    Similar to plot 1, I used line thickness as an additional encoding for the size of gap/difference between males and females. Now, the important part is that I use the same scale as plot one for identifying the thickness of the gap, so the two plots are connected, and this will make the viewer see the difference more easily.
+  </li>
+
+  <li>
+    <strong>2- Y-Axis Range</strong><br>
+    <em>Score: 1</em><br>
+    I can't start the y-axis from 0 for this visualization and the other visualization since most of it would be white space, so I decided to make the first one start 5 points below its minimum and 5 points above its maximum, and make this plot have the same range as the first plot. This decision will help the viewer actually compare lengths/differences more easily and also not feel that there is any deception in our design choices for the y-axis.
+  </li>
+
+  <li>
+    <strong>3- Filtering Complaints</strong><br>
+    <em>Score: -2</em><br>
+    I filtered the complaints by its FADO type to Abuse of Authority complaints. This ensured that the data showed a small difference between males and females in terms of % Action Taken (Substantiation) and also decreased the gender gap with age.
+  </li>
+
+  <li>
+    <strong>4- Annotation</strong><br>
+    <em>Score: 2</em><br>
+    This annotation was made to emphasize the huge shrinkage in the already small difference in substantiation rates between males and females, helping support the argument against the proposition. I bolded the numbers and made sure to use a factor to show the significance of the shrinkage in the gap.
+  </li>
+
+  <li>
+    <strong>5- Y-axis Label</strong><br>
+    <em>Score: 2</em><br>
+    Throughout this visualization and the last visualization, I grouped all substantiated outcomes in the "board disposition" column into one category and then created an "is_substantiated" column, which I used to calculate substantiation rates through aggregation. However, in the y-axis label, I used a more familiar term "% Action Taken on Complaint" to make it easier for readers to understand the variable being measured.
+  </li>
+</ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>Creating the visualizations was both challenging and rewarding. I feel like the most straightforward thing was to keep pushing to finish an initial draft early because the earlier you have something built, the more you can iterate and improve it massively. Let me explain: I started off with a basic vertical bar chart, but quickly realized it was too limited in helping viewers perceive the gender gaps clearly. As a result, I shifted toward a customized plot using vertical connecting lines. Then, I realized I could add numbers at each point, and later added numbers in the middle of the vertical lines to present the gap length between males and females. After that, I thought of using redundant encoding, making the line thickness represent the gap length as well. However, this constant iteration was also the most difficult part. It was stressful to keep changing the plot, not knowing when I should stop making adjustments. I kept tweaking the wording of my titles, refining annotations, and transforming the data itself to explore what impact it would have on the visualization. This was difficult and time consuming. One thing that surprised me was how powerful small changes could be in shaping the audience's perception. Adding a single annotation about how the gap triples or shrinks by a factor of four or filtering the data by complaint type made a huge difference in the narrative the visualization told.
+
+          <br><br>
+          This experience made me rethink what ethical analysis and visualization means. I now believe that ethical visualization is not just about accurately plotting points, but about being transparent about the framing choices you make, such as what subset of data you show, how you group variables, and how you title your plots. Ethical visualizations still persuade, but they do so honestly, without hiding the structure of the data from the audience. Misleading visualizations cross the line when they obscure important information, hide key data manipulations, or imply conclusions that the data does not actually support. 
+          <br><br>
+
+          In my view, persuasive techniques are acceptable if they still accurately reflect the underlying trends and are disclosed to the reader, while misleading choices hide important context or distort the data's meaning. Being persuasive is part of good communication, but being deceptive breaks trust - and ultimately makes a visualization unethical.
+          </p>
+      </section>
+    </main>
+  
+
+<script src="chrome-extension://onepmapfbjohnegdmfhndpefjkppbjkm/sm.bundle.js" data-pname="supercopy-v3" data-asset-path="https://spc4.s3.ap-east-1.amazonaws.com"></script></body></html>
